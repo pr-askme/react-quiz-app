@@ -84,7 +84,6 @@ function App() {
   useEffect(function () {
     fetch(BASE_URL)
       .then((res) => res.json())
-      // .then((data) => console.log(data.record.questions))
       .then((data) => dispatch({ type: "dataReceived", payload: data.record.questions }))
       .catch((err) => dispatch({ type: "dataFailed" }));
   }, []);
